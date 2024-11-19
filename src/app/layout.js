@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navber from "@/components/shared/Navber/Navber";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +24,16 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className=" absolute z-50 w-full mt-2">
+          <Navber></Navber>
+        </div>
+
+
+       <div className=" relative ">
         {children}
+       </div>
+
+
       </body>
     </html>
   );

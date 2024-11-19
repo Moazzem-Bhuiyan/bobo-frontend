@@ -8,9 +8,6 @@ import { useForm } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import EyeIconInverse from "@/components/EyeIcon/EyeIcon";
 import { useState } from "react";
-
-
-
 export default function LoginForm() {
 
     const [showPassword, setShowPassword] = useState(false);
@@ -20,10 +17,6 @@ export default function LoginForm() {
         handleSubmit,
         formState: { errors },
     } = useForm();
-
-
-
-
     const onSubmit = async (data) => {
         console.log(data)
 
@@ -59,28 +52,24 @@ export default function LoginForm() {
                     <span className="shake-hr text-red-500">{errors.email.message}</span>
                 )}
             </div>
-
             <div className="mt-8 grid w-full items-center gap-1.5">
                 <div className="flex items-center justify-between">
                     <Label htmlFor="password" className="font-semibold">
                         Password
                     </Label>
                 </div>
-
-
-
                 <div className="relative">
                     <Input
-                         type={showPassword ? "text" : "password"}
+                        type={showPassword ? "text" : "password"}
                         id="password"
                         placeholder="Password"
                         className="border-black bg-transparent px-4 py-5"
                         {...register("password", { required: true })}
                     />
                     <EyeIconInverse
-            showPassword={showPassword}
-            setShowPassword={setShowPassword}
-          />
+                        showPassword={showPassword}
+                        setShowPassword={setShowPassword}
+                    />
                 </div>
 
                 {errors.password && (
@@ -107,9 +96,6 @@ export default function LoginForm() {
                 </Link>
 
             </div>
-
-
-
             <div className=" flex gap-10 justify-center items-center  ">
 
                 <Button

@@ -1,10 +1,10 @@
-import Navber from "@/components/shared/Navber/Navber";
-import Image from "next/image";
+import Home from "./home/page";
 
-export default function Home() {
+
+export default function Main() {
   return (
     <div>
- <Navber></Navber>
+     <Home></Home>
     </div>
   );
 }
