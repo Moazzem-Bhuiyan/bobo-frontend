@@ -1,4 +1,4 @@
-import Navber from "@/components/shared/Navber/Navber"
+
 import Categories from "./component/Categories"
 
 

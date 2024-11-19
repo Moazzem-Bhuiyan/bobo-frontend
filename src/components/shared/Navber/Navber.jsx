@@ -10,7 +10,7 @@ const Navber = () => {
     const setEnglish = () => setLanguage("en");
     const setBangla = () => setLanguage("fn");
     return (
-        <div className=" flex justify-between w-[80%] mx-auto shadow-md px-4 p-1 rounded-2xl bg-white bg-opacity-0 ">
+        <div className=" flex justify-between w-[80%] mx-auto shadow-md px-4 p-1 rounded-2xl bg-white bg-opacity-70 ">
 
             <Avatar className=" flex gap-x-5 justify-center items-center">
                 <AvatarImage className=" w-10 rounded-full" src="https://github.com/shadcn.png" />
