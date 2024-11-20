@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import EyeIconInverse from "@/components/EyeIcon/EyeIcon";
 import { useState } from "react";
+import { redirect } from "next/navigation";
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -18,6 +19,7 @@ export default function LoginForm() {
   } = useForm();
   const onSubmit = async (data) => {
     console.log(data);
+    redirect("/home")
   };
 
   return (

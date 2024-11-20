@@ -8,7 +8,7 @@ const Navber = () => {
   const setEnglish = () => setLanguage("en");
   const setBangla = () => setLanguage("fn");
   return (
-    <div className=" lg:flex justify-between   w-[80%] mx-auto shadow-md px-4 p-1 rounded-2xl bg-white bg-opacity-70 ">
+    <div className=" flex justify-between   w-[80%] mx-auto shadow-md px-4 p-1 rounded-2xl bg-white bg-opacity-60 ">
       <Avatar className=" flex gap-x-5 justify-center items-center">
         <AvatarImage
           className=" w-10 rounded-full"
@@ -19,7 +19,7 @@ const Navber = () => {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 
-      <div className="flex justify-center items-center p-1 px-2 rounded-2xl bg-white">
+      <div className="flex justify-center items-center p-1 px-2 rounded-2xl bg-white w-32 ">
         <button
           onClick={setEnglish}
           className={`px-4 py-2 rounded transition ${
