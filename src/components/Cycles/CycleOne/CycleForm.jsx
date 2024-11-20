@@ -15,10 +15,10 @@ const CycleForm = () => {
   } = useForm();
   const [result, setResult] = useState(null);
 
-    const onSubmit = async (data) => {
-        console.log(data);
-        setResult(data);
-    };
+  const onSubmit = async (data) => {
+    console.log(data);
+    setResult(data);
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h1 className="text-center text-3xl font-bold mt-8 ">
@@ -96,7 +96,15 @@ const CycleForm = () => {
         </div>
       </div>
 
-      <LearningAreasSection  register={register} setValue={setValue}></LearningAreasSection>
+      <h1 className=" text-center text-3xl font-bold my-4 ">
+        PathWay To Growth
+      </h1>
+      <hr />
+
+      <LearningAreasSection
+        register={register}
+        setValue={setValue}
+      ></LearningAreasSection>
 
       {/* Submit Button */}
       <Button type="submit" className="w-full mb-20">
@@ -104,14 +112,13 @@ const CycleForm = () => {
       </Button>
 
       {result && (
-          <div className="mt-6 p-4 bg-gray-100 rounded-md">
-            <h3 className="text-lg font-medium">Generated Comment:</h3>
-            <pre className="mt-4 p-2 bg-gray-200 rounded-md">
-              {JSON.stringify(result, null, 2)}
-            </pre>
-          </div>
-        )}
-
+        <div className="mt-6 p-4 bg-gray-100 rounded-md">
+          <h3 className="text-lg font-medium">Generated Comment:</h3>
+          <pre className="mt-4 p-2 bg-gray-200 rounded-md">
+            {JSON.stringify(result, null, 2)}
+          </pre>
+        </div>
+      )}
     </form>
   );
 };

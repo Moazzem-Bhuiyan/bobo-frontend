@@ -3,7 +3,8 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
+import LearningAreaSectionThree from "@/components/Form/LearningAreaSection/LearningAreaSectionThree";
+
 
 const CyclethreeForm = () => {
   const {
@@ -94,7 +95,15 @@ const CyclethreeForm = () => {
         </div>
       </div>
 
-      <LearningAreasSection  register={register} setValue={setValue}></LearningAreasSection>
+      <h1 className=" text-center text-3xl font-bold my-4 ">
+        PathWay To Growth
+      </h1>
+      <hr />
+
+      < LearningAreaSectionThree
+        register={register}
+        setValue={setValue}
+      />
 
       {/* Submit Button */}
       <Button type="submit" className="w-full mb-20">
