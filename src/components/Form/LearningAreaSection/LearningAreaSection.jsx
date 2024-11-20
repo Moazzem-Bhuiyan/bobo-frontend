@@ -5,10 +5,15 @@ const LearningAreasSection = ({ register, setValue }) => {
   return (
     <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
       <div className="mt-6 bg-sky-50 rounded-md border-l-2 border-black p-10">
-        <h2 className="text-lg font-semibold text-center">Learning Areas</h2>
+        <h2 className="text-3xl mb-3 text-purple-600 font-semibold text-center">Learning Areas</h2>
+
+
         <div className="grid grid-cols-3 gap-4 mt-4">
+
           <CheckboxGroup
-            title="Mathematical Tools"
+            title="Acquire basic mathematical tools"
+            subtitle="Early Mathematical Concepts"
+            headbgcolor="#303060"
             options={[
               "Comparing Quantities",
               "Discovery of Numbers",
@@ -18,195 +23,230 @@ const LearningAreasSection = ({ register, setValue }) => {
             setValue={setValue}
             groupKey="learningAreas.mathematicalTools"
             bgColor="#EBEDFE"
-          />
-          <CheckboxGroup
-            title="Oral Language"
-            options={[
-              "Discovering Words",
-              "Expressing Clearly",
-              "Understanding Instructions",
-            ]}
-            register={register}
-            setValue={setValue}
-            groupKey="learningAreas.oralLanguage"
-            bgColor="#C0E7FE"
-          />
-          <CheckboxGroup
-            title="Mathematical Tools"
-            options={[
-              "Comparing Quantities",
-              "Discovery of Numbers",
-              "Recognizing Shapes",
-            ]}
-            register={register}
-            setValue={setValue}
-            groupKey="learningAreas.mathematicalTools"
-            bgColor="#BDFCC9"
-          />
-          <CheckboxGroup
-            title="Oral Language"
-            options={[
-              "Discovering Words",
-              "Expressing Clearly",
-              "Understanding Instructions",
-            ]}
-            register={register}
-            setValue={setValue}
-            bgColor="#EBEDFE"
-            groupKey="learningAreas.oralLanguage"
           />
 
           <CheckboxGroup
-            title="Mathematical Tools"
+            title="Mobilize language in all its dimensions"
+            subtitle="Oral LAnguage"
+            headbgcolor="#33B1FC"
             options={[
-              "Comparing Quantities",
-              "Discovery of Numbers",
-              "Recognizing Shapes",
+              "Discovering simple words",
+              "Expressing oneself clearly",
+              "Understanding instructions",
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.mathematicalTools"
+            groupKey="learningAreas.mobilizelanguage"
             bgColor="#C0E7FE"
           />
           <CheckboxGroup
-            title="Oral Language"
+            title="Act, express, understand through artistic activities"
+            subtitle="Music Education"
+            headbgcolor="#3EB489"
             options={[
-              "Discovering Words",
-              "Expressing Clearly",
-              "Understanding Instructions",
+              "Expressing oneself through rhythm",
+              "Singing",
+
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.oralLanguage"
+            groupKey="learningAreas.artisticactivities"
+            bgColor="#BDFCC9"
+          />
+
+          <CheckboxGroup
+            subtitle="Time and Space"
+            headbgcolor="#303060"
+            options={[
+              "Knowing how to orient oneself",
+              "Understanding time (days, months, seasons)",
+
+            ]}
+            register={register}
+            setValue={setValue}
+            bgColor="#EBEDFE"
+            groupKey="learningAreas.mathematicalTools"
+          />
+
+          <CheckboxGroup
+
+            subtitle="Written Language"
+            headbgcolor="#33B1FC"
+            options={[
+              "Familiarization with writing",
+              "Recognition of letters and words",
+
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="learningAreas.mobilizelanguage"
+            bgColor="#C0E7FE"
+          />
+
+          <CheckboxGroup
+            subtitle="Visual Arts"
+            headbgcolor="#3EB489"
+            options={[
+              "Collage and assembly",
+              "Drawing and painting"
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="learningAreas.artisticactivities"
             bgColor="#BDFCC9"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-10 mt-20">
           <CheckboxGroup
-            title="Mathematical Tools"
+            title="Act, express, understand through physical activity"
+            subtitle="Fine Motor Skills"
+            headbgcolor="#D65F00"
             options={[
-              "Comparing Quantities",
-              "Discovery of Numbers",
-              "Recognizing Shapes",
+              "Manipulation of objects",
+              "Precision of movements",
+
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.mathematicalTools"
+            groupKey="learningAreas.physicalactivity"
             bgColor="#FFB84D99"
           />
           <CheckboxGroup
-            title="Oral Language"
+            title="Explore the world"
+            subtitle="Discovry of matter"
+            headbgcolor="#D5006D"
             options={[
-              "Discovering Words",
-              "Expressing Clearly",
-              "Understanding Instructions",
+              "Understanding life cycles",
+
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.oralLanguage"
+            groupKey="learningAreas.exploretheworld"
             bgColor="#FFB6C1"
           />
           <CheckboxGroup
-            title="Mathematical Tools"
+            subtitle="Gross Motor Skills"
+            headbgcolor="#D65F00"
             options={[
-              "Comparing Quantities",
-              "Discovery of Numbers",
-              "Recognizing Shapes",
+              "Coordination of movements",
+              "Participation in physical activities",
+
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.mathematicalTools"
+             groupKey="learningAreas.physicalactivity"
             bgColor="#FFB84D99"
           />
           <CheckboxGroup
-            title="Mathematical Tools"
+            subtitle="Discovry of living things"
+            headbgcolor="#D5006D"
             options={[
-              "Comparing Quantities",
-              "Discovery of Numbers",
-              "Recognizing Shapes",
+              "Discovering materials and objects",
+
             ]}
             register={register}
             setValue={setValue}
-            groupKey="learningAreas.mathematicalTools"
+            groupKey="learningAreas.exploretheworld"
             bgColor="#FFB6C1"
           />
         </div>
+
       </div>
 
       {/* Behavior Section */}
-      <div className="grid grid-cols-3 gap-10 bg-orange-50 mt-20 p-10">
-        <CheckboxGroup
-          title="Mathematical Tools"
-          options={[
-            "Comparing Quantities",
-            "Discovery of Numbers",
-            "Recognizing Shapes",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.mathematicalTools"
-        />
-        <CheckboxGroup
-          title="Oral Language"
-          options={[
-            "Discovering Words",
-            "Expressing Clearly",
-            "Understanding Instructions",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.oralLanguage"
-        />
-        <CheckboxGroup
-          title="Mathematical Tools"
-          options={[
-            "Comparing Quantities",
-            "Discovery of Numbers",
-            "Recognizing Shapes",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.mathematicalTools"
-        />
+
+      <div className="bg-orange-50 mt-20 p-10">
+
+        <h1 className="text-center text-3xl font-bold text-[#D65F00]">Behaviors</h1>
+
+        <div className="grid grid-cols-3 gap-10 ">
+
+          <CheckboxGroup
+            bgColor="#FFB84D33"
+            options={[
+              "Autonomous",
+              "Disruptive",
+              "Living together",
+              "Talkative"
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="behavior"
+          />
+          <CheckboxGroup
+            bgColor="#FFB84D33"
+            options={[
+              "Calm",
+              "Dynamic",
+              "RespectFul of rules",
+              "Voluntary"
+
+            ]}
+            register={register}
+            setValue={setValue}
+             groupKey="behavior"
+           
+          />
+          <CheckboxGroup
+            bgColor="#FFB84D33"
+            options={[
+              "Curious",
+              "Focused",
+              "Shy"
+
+            ]}
+            register={register}
+            setValue={setValue}
+             groupKey="behavior"
+           
+          />
+        </div>
+
+
       </div>
 
       {/* Improvement Section */}
-      <div className="grid grid-cols-3 gap-10 bg-green-50 mt-20 p-10">
-        <CheckboxGroup
-          title="Mathematical Tools"
-          options={[
-            "Comparing Quantities",
-            "Discovery of Numbers",
-            "Recognizing Shapes",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.mathematicalTools"
-        />
-        <CheckboxGroup
-          title="Oral Language"
-          options={[
-            "Discovering Words",
-            "Expressing Clearly",
-            "Understanding Instructions",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.oralLanguage"
-        />
-        <CheckboxGroup
-          title="Mathematical Tools"
-          options={[
-            "Comparing Quantities",
-            "Discovery of Numbers",
-            "Recognizing Shapes",
-          ]}
-          register={register}
-          setValue={setValue}
-          groupKey="learningAreas.mathematicalTools"
-        />
+      
+      <div className="  bg-green-50 mt-20 p-10">
+        <h1 className="text-center text-3xl font-bold text-[#3EB489]">Improvments</h1>
+        <div className="grid grid-cols-3 gap-10">
+          <CheckboxGroup
+            bgColor="#3EB489"
+            options={[
+              "Autonomy",
+              "Motor skills",
+              "Sociability"
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="improvements"
+          />
+          <CheckboxGroup
+            bgColor="#3EB489"
+            options={[
+              "Emotion management",
+              "Oral language",
+              "Understanding instructions"
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="improvements"
+          />
+          <CheckboxGroup
+            bgColor="#3EB489"
+            options={[
+              "Listening",
+              "Respect for rules "
+            ]}
+            register={register}
+            setValue={setValue}
+            groupKey="improvements"
+          />
+        </div>
+
       </div>
+
     </div>
   );
 };
