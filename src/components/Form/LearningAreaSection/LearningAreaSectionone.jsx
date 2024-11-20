@@ -8,7 +8,7 @@ const LearningAreasSection = ({ register, setValue }) => {
           Learning Areas
         </h2>
 
-        <div className="grid grid-cols-3 gap-4 mt-4">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
           <CheckboxGroup
             title="Acquire basic mathematical tools"
             subtitle="Early Mathematical Concepts"
@@ -86,7 +86,7 @@ const LearningAreasSection = ({ register, setValue }) => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-10 mt-20">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10 mt-20">
           <CheckboxGroup
             title="Act, express, understand through physical activity"
             subtitle="Fine Motor Skills"
@@ -138,7 +138,7 @@ const LearningAreasSection = ({ register, setValue }) => {
           Behaviors
         </h1>
 
-        <div className="grid grid-cols-3 gap-10 ">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10 ">
           <CheckboxGroup
             bgColor="#FFB84D33"
             options={[
@@ -174,7 +174,7 @@ const LearningAreasSection = ({ register, setValue }) => {
         <h1 className="text-center text-3xl font-bold text-[#3EB489]">
           Improvments
         </h1>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
           <CheckboxGroup
             bgColor="#3EB489"
             options={["Autonomy", "Motor skills", "Sociability"]}

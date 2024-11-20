@@ -8,7 +8,7 @@ const LearningAreaSectionThree = ({ register, setValue }) => {
           Learning Areas
         </h2>
 
-        <div className="grid grid-cols-3 gap-4 mt-4">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
           <CheckboxGroup
             subtitle="French (Language and Literature)"
             headbgcolor="#303060"
@@ -119,7 +119,7 @@ const LearningAreaSectionThree = ({ register, setValue }) => {
           Behaviors
         </h1>
 
-        <div className="grid grid-cols-3 gap-10 ">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10 ">
           <CheckboxGroup
             bgColor="#FFB84D33"
             options={[
@@ -167,7 +167,7 @@ const LearningAreaSectionThree = ({ register, setValue }) => {
         <h1 className="text-center text-3xl font-bold text-[#3EB489]">
           Improvments
         </h1>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
           <CheckboxGroup
             bgColor="#3EB489"
             options={[
@@ -182,7 +182,12 @@ const LearningAreaSectionThree = ({ register, setValue }) => {
           />
           <CheckboxGroup
             bgColor="#3EB489"
-            options={["French", "Group activities", "Physical education", "Time management"]}
+            options={[
+              "French",
+              "Group activities",
+              "Physical education",
+              "Time management",
+            ]}
             register={register}
             setValue={setValue}
             groupKey="improvements"

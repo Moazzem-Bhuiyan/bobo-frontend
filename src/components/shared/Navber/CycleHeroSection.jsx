@@ -1,5 +1,3 @@
-
-
 const CycleHeroSection = ({ bgImage }) => {
   return (
     <div
@@ -7,8 +5,10 @@ const CycleHeroSection = ({ bgImage }) => {
       style={{ backgroundImage: `url(${bgImage})` }}
     >
 
-    </div>
-  )
-}
 
-export default CycleHeroSection
+      
+    </div>
+  );
+};
+
+export default CycleHeroSection;

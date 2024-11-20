@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import LearningAreaSectionThree from "@/components/Form/LearningAreaSection/LearningAreaSectionThree";
-
+import { useState } from "react";
 
 const CyclethreeForm = () => {
   const {
@@ -14,13 +14,16 @@ const CyclethreeForm = () => {
     formState: { errors },
   } = useForm();
 
+  const [result, setResult] = useState(null);
+
   const onSubmit = async (data) => {
     console.log(data);
+    setResult(data);
   };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h1 className="text-center text-2xl font-bold">
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
+      <h1 className="text-center text-3xl font-bold mt-10">
         Personalized Student Feedback Generation Process
       </h1>
 
@@ -100,16 +103,31 @@ const CyclethreeForm = () => {
       </h1>
       <hr />
 
-      < LearningAreaSectionThree
-        register={register}
-        setValue={setValue}
-      />
+      <LearningAreaSectionThree register={register} setValue={setValue} />
 
       {/* Submit Button */}
-      <Button type="submit" className="w-full mb-20">
-        Generate Comment
-      </Button>
+
+      <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
+        <Button type="submit" className="w-full mb-20 bg-purple-950">
+          Generate Comment
+        </Button>
+      </div>
     </form>
+
+    {/* showComment */}
+
+    {result && (
+        <div className="mt-6 p-4 bg-gray-100 rounded-md">
+          <h3 className="text-lg font-medium">Generated Comment:</h3>
+          <pre className="mt-4 p-2 bg-gray-200 rounded-md">
+            {JSON.stringify(result, null, 2)}
+          </pre>
+        </div>
+      )}
+    </>
+  
+
+    
   );
 };
 

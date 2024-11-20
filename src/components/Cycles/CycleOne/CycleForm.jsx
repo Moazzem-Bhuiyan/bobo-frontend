@@ -107,9 +107,11 @@ const CycleForm = () => {
       ></LearningAreasSection>
 
       {/* Submit Button */}
-      <Button type="submit" className="w-full mb-20">
-        Generate Comment
-      </Button>
+      <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
+        <Button type="submit" className="w-full mb-20 bg-purple-950">
+          Generate Comment
+        </Button>
+      </div>
 
       {result && (
         <div className="mt-6 p-4 bg-gray-100 rounded-md">
