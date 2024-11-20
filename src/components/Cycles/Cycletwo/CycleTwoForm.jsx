@@ -4,7 +4,8 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSection";
+
+import LearningAreaSectionTwo from "@/components/Form/LearningAreaSection/LearningAreaSectionTwo";
 
 const CycleTwoForm = () => {
   const {
@@ -20,7 +21,7 @@ const CycleTwoForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h1 className="text-center text-2xl font-bold">
+      <h1 className="text-center text-3xl mt-10 font-bold">
         Personalized Student Feedback Generation Process
       </h1>
 
@@ -95,7 +96,8 @@ const CycleTwoForm = () => {
         </div>
       </div>
 
-      <LearningAreasSection  register={register} setValue={setValue}></LearningAreasSection>
+
+      <LearningAreaSectionTwo register={register} setValue={setValue} ></LearningAreaSectionTwo>
 
       {/* Submit Button */}
       <Button type="submit" className="w-full mb-20">

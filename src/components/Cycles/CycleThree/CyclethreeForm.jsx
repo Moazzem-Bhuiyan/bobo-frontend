@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSection";
+import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
 
 const CyclethreeForm = () => {
   const {

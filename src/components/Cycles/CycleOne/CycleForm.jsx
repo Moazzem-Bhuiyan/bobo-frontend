@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSection";
+import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
 import { useState } from "react";
 
 const CycleForm = () => {
@@ -21,7 +21,7 @@ const CycleForm = () => {
     };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h1 className="text-center text-2xl font-bold">
+      <h1 className="text-center text-3xl font-bold mt-8 ">
         Personalized Student Feedback Generation Process
       </h1>
 
