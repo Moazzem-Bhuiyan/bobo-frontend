@@ -1,5 +1,6 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import Link from "next/link";
 import { useState } from "react";
 
 const Navber = () => {
@@ -9,7 +10,10 @@ const Navber = () => {
   const setBangla = () => setLanguage("fn");
   return (
     <div className=" flex justify-between   w-[80%] mx-auto shadow-md px-4 p-1 rounded-2xl bg-white bg-opacity-60 ">
-      <Avatar className=" flex gap-x-5 justify-center items-center">
+     
+     <Link href="/home">
+     
+     <Avatar className=" flex gap-x-5 justify-center items-center">
         <AvatarImage
           className=" w-10 rounded-full"
           src="https://github.com/shadcn.png"
@@ -18,6 +22,8 @@ const Navber = () => {
 
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
+     
+     </Link>
 
       <div className="flex justify-center items-center p-1 px-2 rounded-2xl bg-white w-32 ">
         <button
