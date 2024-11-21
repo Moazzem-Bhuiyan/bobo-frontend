@@ -19,7 +19,7 @@ export default function LoginForm() {
   } = useForm();
   const onSubmit = async (data) => {
     console.log(data);
-    redirect("/home")
+    redirect("/home");
   };
 
   return (
@@ -97,18 +97,20 @@ export default function LoginForm() {
       <div className=" flex gap-10 justify-center items-center  ">
         <Button
           type="submit"
-          className="mt-10 block h-[2.7rem] border-2 border-black bg-transparent text-black w-1/2  hover:bg-purple-950 hover:text-white "
+          className="mt-10 block h-[2.7rem] border-2 border-black bg-transparent text-black   hover:bg-purple-950 hover:text-white "
         >
           SIGN IN
         </Button>
 
-        <Button
-          varient="default"
-          type="submit"
-          className="mt-10 block h-[2.7rem]  border-2 border-black bg-transparent text-black md:w-1/2 hover:bg-purple-950 hover:text-white"
-        >
-          Continue As a Guest
-        </Button>
+        <Link href="/home">
+          <Button
+            varient="default"
+            type="button"
+            className="mt-10 block h-[2.7rem]  border-2 border-black bg-transparent text-black  hover:bg-purple-950 hover:text-white"
+          >
+            Continue as a Guest
+          </Button>
+        </Link>
       </div>
 
       <div className="mt-3 flex items-center justify-center gap-2">

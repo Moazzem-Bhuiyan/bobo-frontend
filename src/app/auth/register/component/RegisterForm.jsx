@@ -134,12 +134,16 @@ const RegisterForm = () => {
         Continue With Google
       </Button>
 
-      <Button
-        type="submit"
+  <Link href="/home">
+  
+  <Button
+        type="button"
         className="  block h-[2.7rem]  m-auto mt-8   text-black border-2 border-black bg-transparent hover:bg-purple-950 w-full hover:text-white "
       >
         Continue as Guest
       </Button>
+  
+  </Link>
 
       <div className="mt-3 flex items-center justify-center gap-2">
         <p>Allready have an account?</p>
