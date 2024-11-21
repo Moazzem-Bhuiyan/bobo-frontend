@@ -88,7 +88,7 @@ export default function LoginForm() {
           </label>
         </div>
         <Link
-          href="/forgetPassword"
+          href="/auth/forgetPassword"
           className="text-sm font-medium text-primary-black"
         >
           Forgot Password?
@@ -113,7 +113,7 @@ export default function LoginForm() {
 
       <div className="mt-3 flex items-center justify-center gap-2">
         <p>Don&apos;t have an account?</p>
-        <Link href="/register" className="font-medium text-primary-orange">
+        <Link href="/auth/register" className="font-medium text-primary-orange">
           Register
         </Link>
       </div>

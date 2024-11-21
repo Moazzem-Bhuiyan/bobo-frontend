@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navber from "@/components/shared/Navber/Navber";
+import NavbarWithConditionalRendering from "@/components/layouts/NavberwithConditional";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,19 +22,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <div>
-        <div className="absolute top-0 z-50 w-full mt-2 ">
-          <Navber></Navber>
+         
+          <div className="absolute top-2 z-50 w-full">
+            <NavbarWithConditionalRendering></NavbarWithConditionalRendering>
+          </div>
+
+          {children}
         </div>
-
-        {children}
-        </div>
-      
-
-
       </body>
     </html>
   );

@@ -143,7 +143,7 @@ const RegisterForm = () => {
 
       <div className="mt-3 flex items-center justify-center gap-2">
         <p>Allready have an account?</p>
-        <Link href="/login" className="font-medium text-primary-orange">
+        <Link href="/auth/login" className="font-medium text-primary-orange">
           Login
         </Link>
       </div>
