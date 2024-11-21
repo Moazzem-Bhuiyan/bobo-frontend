@@ -24,7 +24,9 @@ export default function ForgetPasswordForm() {
     >
       <h2 className="mb-3 text-4xl font-semibold">Forgot Password?</h2>
       <p className="mb-10  text-primary-black">
-        Enter your details below to request an OTP for account password reset.
+        {/* Enter your details below to request an OTP for account password reset. */}
+
+        Enter your Email
       </p>
       <div className="grid w-full items-center gap-1.5">
         <Label
