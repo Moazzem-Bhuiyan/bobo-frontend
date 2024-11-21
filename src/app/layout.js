@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import Navber from "@/components/shared/Navber/Navber";
+
 import NavbarWithConditionalRendering from "@/components/layouts/NavberwithConditional";
 
 const geistSans = localFont({
@@ -30,7 +30,6 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <div>
-         
           <div className="absolute top-2 z-50 w-full">
             <NavbarWithConditionalRendering></NavbarWithConditionalRendering>
           </div>
