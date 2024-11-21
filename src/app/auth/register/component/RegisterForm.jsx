@@ -43,7 +43,7 @@ const RegisterForm = () => {
         </div>
 
         {errors.name && (
-          <span className={"shake-hr text-red-500"}>Name is required</span>
+          <span className={"shake-hr text-red-500"}>Name is required.</span>
         )}
       </div>
 
