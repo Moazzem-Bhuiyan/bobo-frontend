@@ -1,14 +1,25 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-const CheckboxGroup = ({ title, options, groupKey, setValue, bgColor, subtitle, headbgcolor }) => {
+const CheckboxGroup = ({
+  title,
+  options,
+  groupKey,
+  setValue,
+  bgColor,
+  subtitle,
+  headbgcolor,
+}) => {
   const [selectedOptions, setSelectedOptions] = useState(
     options.reduce((acc, option) => {
       acc[option] = null;
       return acc;
     }, {})
   );
+
+  const t = useTranslations("cycleOne");
 
   const handlePlus = (option) => {
     setSelectedOptions((prev) => ({
@@ -36,43 +47,58 @@ const CheckboxGroup = ({ title, options, groupKey, setValue, bgColor, subtitle, 
 
   return (
     <div>
-      <h3 className="font-medium mb-2 text-center ">{title}</h3>
+      {/* <h3 className="font-medium mb-2 text-center ">{ t (`${title}`)} </h3> */}
 
       <div
         className="flex flex-col space-y-2 p-4 rounded-3xl border"
         style={{
-          backgroundColor: bgColor
+          backgroundColor: bgColor,
         }}
       >
-        <h1 className=" text-center  p-2 rounded-3xl text-white " style={{ backgroundColor: headbgcolor }} >{subtitle}</h1>
+        <h1
+          className=" text-center  p-2 rounded-3xl text-white "
+          style={{ backgroundColor: headbgcolor }}
+        >
+       { t (`${subtitle}`)}
+        </h1>
         {options.map((option) => (
-          <div key={option} className="p-2  rounded flex items-center justify-between"  >
+          <div
+            key={option}
+            className="p-2  rounded flex items-center justify-between"
+          >
             <div className="flex items-center">
-              <span>{option}</span>
+            { t (`${option}`)}
             </div>
 
             {/* Buttons for plus, minus, and reset */}
             <div className="flex space-x-2 items-center">
               <button
                 type="button"
-                className={`px-2 py-1 rounded ${selectedOptions[option] === true ? "bg-green-500 text-white" : "bg-white"
-                  } text-black`}
+                className={`px-2 py-1 rounded ${
+                  selectedOptions[option] === true
+                    ? "bg-green-500 text-white"
+                    : "bg-white"
+                } text-black`}
                 onClick={() => handlePlus(option)}
               >
                 +
               </button>
               <button
                 type="button"
-                className={`px-2 py-1 rounded ${selectedOptions[option] === false ? "bg-red-500 text-white" : "bg-white"
-                  } text-black`}
+                className={`px-2 py-1 rounded ${
+                  selectedOptions[option] === false
+                    ? "bg-red-500 text-white"
+                    : "bg-white"
+                } text-black`}
                 onClick={() => handleMinus(option)}
               >
                 -
               </button>
               <button
                 type="button"
-                className={`px-2 py-1 rounded ${selectedOptions[option] === null ? "bg-white " : "bg-gray-400"
-                  } text-black`}
+                className={`px-2 py-1 rounded ${
+                  selectedOptions[option] === null ? "bg-white " : "bg-gray-400"
+                } text-black`}
                 onClick={() => handleReset(option)}
               >
                 ×

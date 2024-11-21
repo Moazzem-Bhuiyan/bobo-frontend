@@ -5,8 +5,11 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const CycleForm = () => {
+  const t = useTranslations("cycleOne");
+
   const {
     register,
     handleSubmit,
@@ -22,7 +25,7 @@ const CycleForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h1 className="text-center text-3xl font-bold mt-8 ">
-        Personalized Student Feedback Generation Process
+        {t("Personalized Student Feedback Generation Process")}
       </h1>
 
       <div className="text-primary-black lg:mx-auto lg:w-[45%] bg-white bg-opacity-70 p-5 rounded-lg">
@@ -97,7 +100,7 @@ const CycleForm = () => {
       </div>
 
       <h1 className=" text-center text-3xl font-bold my-4 ">
-        PathWay To Growth
+        {t("PathWay To Growth")}
       </h1>
       <hr />
 

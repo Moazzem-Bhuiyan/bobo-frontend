@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link, redirect } from "@/i18n/routing";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,6 @@ import { useForm } from "react-hook-form";
 import { Checkbox } from "@/components/ui/checkbox";
 import EyeIconInverse from "@/components/EyeIcon/EyeIcon";
 import { useState } from "react";
-import { redirect } from "next/navigation";
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -97,7 +96,7 @@ export default function LoginForm() {
       <div className=" flex gap-10 justify-center items-center  ">
         <Button
           type="submit"
-          className="mt-10 block h-[2.7rem] border-2 border-black bg-transparent text-black   hover:bg-purple-950 hover:text-white "
+          className="mt-10 block h-[2.7rem] border-2 border-black bg-transparent text-black px-12  hover:bg-purple-950 hover:text-white "
         >
           SIGN IN
         </Button>

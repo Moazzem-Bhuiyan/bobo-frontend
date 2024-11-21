@@ -3,7 +3,8 @@ import cy1 from "/public/cy1.png";
 import cy2 from "/public/cy2.png";
 import cy3 from "/public/cy3.png";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const Categories = () => {
   const category = [
@@ -29,6 +30,8 @@ const Categories = () => {
 
   const bgColors = ["bg-red-100", "bg-green-100", "bg-blue-100"];
 
+  const t = useTranslations("home");
+
   return (
     <div className=" grid xl:grid-cols-3 lg:grid-cols-2 justify-center gap-8 items-center">
       {category.map((item, index) => (
@@ -46,10 +49,9 @@ const Categories = () => {
             </div>
 
             <div className=" rounded-2xl flex flex-col relative justify-center items-center bg-white -mt-10 py-5 space-y-3 w-11/12 m-auto">
-              <h1 className=" text-2xl">{item.title}</h1>
+              <h1 className=" text-2xl">{t(`${item.title}`)}</h1>
 
               <Link href={item.link}>
-                {" "}
                 <Button
                   varient="deafult"
                   size="lg"

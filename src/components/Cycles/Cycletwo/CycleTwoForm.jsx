@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button";
 
 import LearningAreaSectionTwo from "@/components/Form/LearningAreaSection/LearningAreaSectionTwo";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const CycleTwoForm = () => {
+  const t = useTranslations("cycleOne");
   const {
     register,
     handleSubmit,
@@ -27,7 +29,7 @@ const CycleTwoForm = () => {
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1 className="text-center text-3xl mt-10 font-bold">
-          Personalized Student Feedback Generation Process
+        {t("Personalized Student Feedback Generation Process")}
         </h1>
 
         <div className="text-primary-black lg:mx-auto lg:w-[45%] bg-white bg-opacity-70 p-5 rounded-lg">
@@ -102,7 +104,7 @@ const CycleTwoForm = () => {
         </div>
 
         <h1 className=" text-center text-3xl font-bold my-4 ">
-          PathWay To Growth
+          {t("PathWay To Growth")}
         </h1>
         <hr />
 

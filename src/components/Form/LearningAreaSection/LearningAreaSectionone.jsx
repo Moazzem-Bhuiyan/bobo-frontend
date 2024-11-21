@@ -1,11 +1,13 @@
 import CheckboxGroup from "@/components/CheckBox";
+import { useTranslations } from "next-intl";
 
 const LearningAreasSection = ({ register, setValue }) => {
+  const t = useTranslations("cycleOne");
   return (
     <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
       <div className="mt-6 bg-sky-50 rounded-md border-l-2 border-black p-10">
         <h2 className="text-3xl mb-3 text-purple-600 font-semibold text-center">
-          Learning Areas
+          {t("Learning Areas")}
         </h2>
 
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4 mt-4">
