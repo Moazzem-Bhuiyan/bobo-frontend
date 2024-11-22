@@ -1,4 +1,6 @@
 "use client"// ScrollToTopButton.jsx
+import { cn } from "@/lib/utils";
+import { ChevronsUp } from "lucide-react";
 import React, { useState, useEffect } from "react";
 
 const ScrollToTopButton = () => {
@@ -29,9 +31,12 @@ const ScrollToTopButton = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-5 right-5 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+        className={cn(
+          "fixed bottom-10 right-10 flex h-10 w-10 items-center justify-center rounded-full border-2 border-black text-black transition-all duration-300 ease-in-out hover:bg-purple-900 hover:text-white",
+          isVisible ? "visible opacity-100" : "invisible opacity-0",
+        )}
       >
-        ↑
+      <ChevronsUp />
       </button>
     )
   );

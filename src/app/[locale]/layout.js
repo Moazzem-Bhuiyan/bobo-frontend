@@ -1,3 +1,4 @@
+import ScrollToTopButton from "@/components/ScroltopBUtton/ScrolTopButton";
 import "./globals.css";
 
 import NavbarWithConditionalRendering from "@/components/layouts/NavberwithConditional";
@@ -46,6 +47,8 @@ export default async function RootLayout({ children, params }) {
             </div>
 
             {children}
+            
+            <ScrollToTopButton></ScrollToTopButton>
             
           </div>
 

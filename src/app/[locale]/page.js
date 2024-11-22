@@ -1,4 +1,4 @@
-import Categories from "@/components/HomeComponents/Categories";
+// import Categories from "@/components/HomeComponents/Categories";
 
 import { useTranslations } from "next-intl";
 import LoginPage from "./auth/login/page";

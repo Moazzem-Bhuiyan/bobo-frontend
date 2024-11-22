@@ -185,6 +185,10 @@
     "Sports Activitise": "Activités Sportives",
     "Citizenship": "Citoyenneté",
     "History and Geography": "Histoire et Géographie",
-    "Artistic Education": "Éducation Artistique"
+    "Artistic Education": "Éducation Artistique",
+
+    "Name is required": "Le nom est requis",
+  "Tone of Voice is required": "Le ton de la voix est requis",
+  "Gender is required": "Le genre est requis"
   }
 }

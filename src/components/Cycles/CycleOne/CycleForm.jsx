@@ -41,7 +41,7 @@ const CycleForm = () => {
               id="name"
             
               className="border-black bg-transparent px-4 py-5"
-              {...register("name", { required: "Name is required" })}
+              {...register("name", { required: t("Name is required" )})}
             />
           </div>
           {errors.name && (
@@ -61,7 +61,7 @@ const CycleForm = () => {
               id="toneOfVoice"
               className="w-full border rounded-md  border-black bg-transparent px-4 py-3"
               {...register("toneOfVoice", {
-                required: "Tone of Voice is required",
+                required: t("Tone of Voice is required"),
               })}
             >
               <option value=""></option>
@@ -85,7 +85,7 @@ const CycleForm = () => {
             <select
               id="gender"
               className="w-full border rounded-md border-black bg-transparent px-4 py-3"
-              {...register("gender", { required: "Gender is required" })}
+              {...register("gender", { required: t("Gender is required") })}
             >
               <option value=""></option>
               <option value="Male">{t("Male")}</option>

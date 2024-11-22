@@ -10,7 +10,8 @@ const LoginPage = () => {
     >
       <LoginForm></LoginForm>
 
-      <p>{t("hello")}</p>
+      
+
     </div>
   );
 };
