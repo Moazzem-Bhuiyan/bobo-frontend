@@ -108,12 +108,13 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
       {/* Behavior Section */}
 
       <div className="bg-orange-50 mt-20 p-10 rounded-2xl border-l border-black ">
-        <h1 className="text-center text-3xl font-bold text-[#D65F00]">
+        <h1 className="text-center text-3xl mb-5 font-bold text-[#D65F00]">
           {t("Behaviors")}
         </h1>
 
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10 ">
           <CheckboxGroup
+           subtitle=""
             bgColor="#FFB84D33"
             options={[
               "Attentive",
@@ -127,6 +128,7 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
             groupKey="behavior"
           />
           <CheckboxGroup
+           subtitle=""
             bgColor="#FFB84D33"
             options={[
               "Autonomy",
@@ -140,6 +142,7 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
             groupKey="behavior"
           />
           <CheckboxGroup
+           subtitle=""
             bgColor="#FFB84D33"
             options={["Calm", "Dynamism", "Invested", "serious", "Voluntary"]}
             register={register}
@@ -152,11 +155,12 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
       {/* Improvement Section */}
 
       <div className="  bg-green-50 mt-20 p-10 rounded-2xl border-l border-black">
-        <h1 className="text-center text-3xl font-bold text-[#3EB489]">
+        <h1 className="text-center text-3xl mb-5 font-bold text-[#3EB489]">
           {t("Improvements")}
         </h1>
         <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
           <CheckboxGroup
+           subtitle=""
             bgColor="#3EB489"
             options={[
               "Attentive",
@@ -170,6 +174,7 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
             groupKey="improvements"
           />
           <CheckboxGroup
+           subtitle=""
             bgColor="#3EB489"
             options={["Autonomy", "Dynamic", "Mathmatics", "Reading"]}
             register={register}
@@ -177,10 +182,11 @@ const LearningAreaSectionTwo = ({ register, setValue }) => {
             groupKey="improvements"
           />
           <CheckboxGroup
+           subtitle=""
             bgColor="#3EB489"
             options={[
               "AttenTion",
-              "French ",
+              "French",
               "Problem-solving",
               "Understanding reading text",
             ]}

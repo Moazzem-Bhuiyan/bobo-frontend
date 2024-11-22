@@ -46,7 +46,10 @@ export default async function RootLayout({ children, params }) {
             </div>
 
             {children}
+            
           </div>
+
+    
         </NextIntlClientProvider>
       </body>
     </html>

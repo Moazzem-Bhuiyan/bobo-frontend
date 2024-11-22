@@ -31,6 +31,7 @@ const Categories = () => {
   const bgColors = ["bg-red-100", "bg-green-100", "bg-blue-100"];
 
   const t = useTranslations("home");
+ 
 
   return (
     <div className=" grid xl:grid-cols-3 lg:grid-cols-2 justify-center gap-8 items-center">
@@ -57,7 +58,7 @@ const Categories = () => {
                   size="lg"
                   className="bg-white text-black text-lg  border-2 border-black hover:bg-purple-950 hover:text-white "
                 >
-                  Select
+                 {t("Select")}
                 </Button>
               </Link>
             </div>

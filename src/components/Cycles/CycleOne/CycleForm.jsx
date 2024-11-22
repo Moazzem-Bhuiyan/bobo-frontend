@@ -33,13 +33,13 @@ const CycleForm = () => {
         <div className="mt-8 grid w-full items-center gap-1.5">
           <div className="flex items-center justify-between">
             <Label htmlFor="name" className="font-semibold">
-              Student Name
+           {t("Student Name")}
             </Label>
           </div>
           <div className="relative">
             <Input
               id="name"
-              placeholder="Name"
+            
               className="border-black bg-transparent px-4 py-5"
               {...register("name", { required: "Name is required" })}
             />
@@ -53,7 +53,7 @@ const CycleForm = () => {
         <div className="mt-8 grid w-full items-center gap-1.5">
           <div className="flex items-center justify-between">
             <Label htmlFor="toneOfVoice" className="font-semibold">
-              Select Tone Of Voice
+            {t("Select Tone Of Voice")}
             </Label>
           </div>
           <div className="relative">
@@ -78,7 +78,7 @@ const CycleForm = () => {
         <div className="mt-8 grid w-full items-center gap-1.5">
           <div className="flex items-center justify-between">
             <Label htmlFor="gender" className="font-semibold">
-              Select Gender
+           {t("Select Gender")}
             </Label>
           </div>
           <div className="relative">
@@ -88,9 +88,9 @@ const CycleForm = () => {
               {...register("gender", { required: "Gender is required" })}
             >
               <option value=""></option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Other">Other</option>
+              <option value="Male">{t("Male")}</option>
+              <option value="Female">{t("Female")}</option>
+              <option value="Other">{t("Other")}</option>
             </select>
           </div>
           {errors.gender && (
@@ -112,7 +112,7 @@ const CycleForm = () => {
       {/* Submit Button */}
       <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
         <Button type="submit" className="w-full mb-20 bg-purple-950">
-          Generate Comment
+        {t("Generate Comment")}
         </Button>
       </div>
 

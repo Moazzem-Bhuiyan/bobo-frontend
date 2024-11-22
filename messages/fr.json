@@ -7,7 +7,8 @@
     "Explore key learning areas, behaviors, and improvements by cycle level": "Explorez les principaux domaines d'apprentissage, les comportements et les améliorations par niveau de cycle",
     "Cycle 1": "Cycle 1",
     "Cycle 2": "Vélo 2",
-    "Cycle 3": "Vélo 3"
+    "Cycle 3": "Vélo 3",
+    "Select": "Sélectionner"
   },
   "login": {
     "hello": "Bonjour"
@@ -168,6 +169,22 @@
 
     "Historical knowledge": "Connaissances historiques",
     "Motivated": "Motivé",
-    "Passive": "Passif"
+    "Passive": "Passif",
+
+    "Student Name": "Nom de l'étudiant",
+    "Name": "Nom",
+    "Select Tone Of Voice": "Sélectionner le ton de la voix",
+    "Select Gender": "Sélectionner le genre",
+
+    "Generate Comment": "Générer un commentaire",
+    "Other": "Autre",
+    "Female": "Femme",
+    "Male": "Homme",
+    "": "",
+    "Science and Technology": "Sciences et Technologie",
+    "Sports Activitise": "Activités Sportives",
+    "Citizenship": "Citoyenneté",
+    "History and Geography": "Histoire et Géographie",
+    "Artistic Education": "Éducation Artistique"
   }
 }
