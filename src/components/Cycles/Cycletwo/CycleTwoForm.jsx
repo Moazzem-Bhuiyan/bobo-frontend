@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import LearningAreaSectionTwo from "@/components/Form/LearningAreaSection/LearningAreaSectionTwo";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Dialog } from "@headlessui/react";
 
 const CycleTwoForm = () => {
   const t = useTranslations("cycleOne");
@@ -19,10 +20,12 @@ const CycleTwoForm = () => {
   } = useForm();
 
   const [result, setResult] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onSubmit = async (data) => {
     console.log(data);
     setResult(data);
+    setIsModalOpen(true);
   };
 
   return (
@@ -123,14 +126,22 @@ const CycleTwoForm = () => {
 
       {/* show Comment */}
 
-      {result && (
-        <div className="mt-6 p-4 bg-gray-100 rounded-md">
-          <h3 className="text-lg font-medium">Generated Comment:</h3>
-          <pre className="mt-4 p-2 bg-gray-200 rounded-md">
-            {JSON.stringify(result, null, 2)}
-          </pre>
+      <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)} className="relative z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <Dialog.Panel className="bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
+            <Dialog.Title className="text-lg font-bold">
+              Generated Comment
+            </Dialog.Title>
+            <div className="mt-4">
+              <pre className="bg-gray-100 p-3 rounded">{JSON.stringify(result, null, 2)}</pre>
+            </div>
+            <Button onClick={() => setIsModalOpen(false)} className="mt-4 w-full bg-purple-950 ">
+              Close
+            </Button>
+          </Dialog.Panel>
         </div>
-      )}
+      </Dialog>
     </>
   );
 };

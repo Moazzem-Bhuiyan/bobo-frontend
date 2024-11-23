@@ -125,13 +125,13 @@ const RegisterForm = () => {
 
       <h1 className=" text-center text-2xl font-bold mt-5">Or</h1>
 
-      <Button
+      {/* <Button
         variant="default"
         type="submit"
         className="  block h-[2.7rem]  m-auto mt-8   text-black border-2 border-black bg-transparent hover:bg-purple-950 w-full hover:text-white "
       >
         Continue With Google
-      </Button>
+      </Button> */}
 
       <Link href="/home">
         <Button
