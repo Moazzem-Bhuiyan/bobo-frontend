@@ -186,18 +186,18 @@
     "Female": "Female",
     "Male": "Male",
 
-   "": "",
+    "": "",
 
     "Science and Technology": "Science and Technology",
     "Sports Activitise": "Sports Activitise",
     "Citizenship": "Citizenship",
-    "History and Geography" : "History and Geography",
+    "History and Geography": "History and Geography",
     "Artistic Education": "Artistic Education",
-    "Early Mathematical Concepts" : "Early Mathematical Concepts",
+    "Early Mathematical Concepts": "Early Mathematical Concepts",
 
-    "Name is required" : "Name is required" ,
+    "Name is required": "Name is required",
     "Tone of Voice is required": "Tone of Voice is required",
-    "Gender is required" : "Gender is required" 
-
+    "Gender is required": "Gender is required"
+    
   }
 }

@@ -59,16 +59,14 @@ const CheckboxGroup = ({
           className=" text-center  p-2 rounded-3xl text-white "
           style={{ backgroundColor: headbgcolor }}
         >
-       { t (`${subtitle}`)}
+          {t(`${subtitle}`)}
         </h1>
         {options.map((option) => (
           <div
             key={option}
             className="p-2  rounded flex items-center justify-between"
           >
-            <div className="flex items-center">
-            { t (`${option}`)}
-            </div>
+            <div className="flex items-center">{t(`${option}`)}</div>
 
             {/* Buttons for plus, minus, and reset */}
             <div className="flex space-x-2 items-center">
@@ -113,11 +111,7 @@ const CheckboxGroup = ({
 
 export default CheckboxGroup;
 
-
-
 // ----------------------------------------------------------
-
-
 
 // "use client";
 // import { Popover } from "@headlessui/react"; // Assuming you're using Headless UI for Popovers

@@ -1,4 +1,3 @@
-
 import CycleHeroSection from "@/components/shared/Navber/CycleHeroSection";
 import CycleForm from "./CycleForm";
 const CycleOne = () => {

@@ -9,9 +9,6 @@ const LoginPage = () => {
       style={{ backgroundImage: "url(/authbg.png)" }}
     >
       <LoginForm></LoginForm>
-
-      
-
     </div>
   );
 };

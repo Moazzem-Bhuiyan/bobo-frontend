@@ -41,7 +41,9 @@ const CycleForm = () => {
               {t("Student Name")}
             </Label>
             <Popover className="relative">
-              <Popover.Button className="text-blue-500 cursor-help">?</Popover.Button>
+              <Popover.Button className="text-blue-500 cursor-help">
+                ?
+              </Popover.Button>
               <Popover.Panel className="absolute z-10 bg-white p-4 rounded shadow-lg mt-2 w-48">
                 Enter the full name of the student
               </Popover.Panel>
@@ -50,6 +52,7 @@ const CycleForm = () => {
           <div className="relative">
             <Input
               id="name"
+              placeholder={t("Name")}
               className="border-black bg-transparent px-4 py-5"
               {...register("name", { required: t("Name is required") })}
             />
@@ -66,7 +69,9 @@ const CycleForm = () => {
               {t("Select Tone Of Voice")}
             </Label>
             <Popover className="relative">
-              <Popover.Button className="text-blue-500 cursor-help">?</Popover.Button>
+              <Popover.Button className="text-blue-500 cursor-help">
+                ?
+              </Popover.Button>
               <Popover.Panel className="absolute z-10 bg-white p-4 rounded shadow-lg mt-2 w-48">
                 Choose the tone of voice preferred for communication
               </Popover.Panel>
@@ -98,7 +103,9 @@ const CycleForm = () => {
               {t("Select Gender")}
             </Label>
             <Popover className="relative">
-              <Popover.Button className="text-blue-500 cursor-help">?</Popover.Button>
+              <Popover.Button className="text-blue-500 cursor-help">
+                ?
+              </Popover.Button>
               <Popover.Panel className="absolute z-10 bg-white p-4 rounded shadow-lg mt-2 w-48">
                 Select the gender of the student
               </Popover.Panel>
@@ -140,17 +147,29 @@ const CycleForm = () => {
       </div>
 
       {/* Modal */}
-      <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)} className="relative z-50">
-        <div className="fixed inset-0 bg-black bg-opacity-50" aria-hidden="true" />
+      <Dialog
+        open={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        className="relative z-50"
+      >
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50"
+          aria-hidden="true"
+        />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel className="bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
             <Dialog.Title className="text-lg font-bold">
               Generated Comment
             </Dialog.Title>
             <div className="mt-4">
-              <pre className="bg-gray-100 p-3 rounded">{JSON.stringify(result, null, 2)}</pre>
+              <pre className="bg-gray-100 p-3 rounded">
+                {JSON.stringify(result, null, 2)}
+              </pre>
             </div>
-            <Button onClick={() => setIsModalOpen(false)} className="mt-4 w-full bg-purple-950 ">
+            <Button
+              onClick={() => setIsModalOpen(false)}
+              className="mt-4 w-full bg-purple-950 "
+            >
               Close
             </Button>
           </Dialog.Panel>

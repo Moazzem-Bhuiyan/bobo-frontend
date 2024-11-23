@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import cy1 from "/public/cy1.png";
 import cy2 from "/public/cy2.png";
@@ -44,7 +44,9 @@ const Categories = () => {
       {category.map((item, index) => (
         <div
           key={item.id}
-          className={`${bgColors[index % bgColors.length]} rounded-lg pb-8 relative`}
+          className={`${
+            bgColors[index % bgColors.length]
+          } rounded-lg pb-8 relative`}
           onMouseEnter={() => {
             if (firstHover !== item.id) {
               setFirstHover(item.id); // Set on first hover only
@@ -64,11 +66,7 @@ const Categories = () => {
 
           <div>
             <div>
-              <Image
-                className="w-[332px] h-[186px]"
-                src={item.img}
-                alt="img"
-              />
+              <Image className="w-[332px] h-[186px]" src={item.img} alt="img" />
             </div>
 
             <div className="rounded-2xl flex flex-col relative justify-center items-center bg-white -mt-10 py-5 space-y-3 w-11/12 m-auto">
