@@ -1,10 +1,8 @@
 "use client";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
 import LearningAreaSectionThree from "@/components/Form/LearningAreaSection/LearningAreaSectionThree";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 import { Dialog, Popover } from "@headlessui/react";
 import axios from "axios";
 import { Copy } from "lucide-react";
@@ -15,7 +13,7 @@ import Swal from "sweetalert2";
 
 const CycleForm = () => {
   const t = useTranslations("cycleOne");
-  const { toast } = useToast();
+
 
   const {
     register,
@@ -112,9 +110,10 @@ const CycleForm = () => {
               })}
             >
               <option value=""></option>
-              <option value="A">Grade A</option>
-              <option value="B">Grade B</option>
-              <option value="C">Grade C</option>
+              <option value="A">Caring</option>
+              <option value="B">Encouraging</option>
+              <option value="c">Enthusiastic</option>
+              <option value="D">Rigorous</option>
             </select>
           </div>
           {errors.toneOfVoice && (
@@ -179,7 +178,6 @@ const CycleForm = () => {
         </Button>
       </div>
 
-      {/* Modal */}
       {/* Modal */}
       <Dialog
         open={isModalOpen}

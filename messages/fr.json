@@ -1,41 +1,39 @@
 {
   "navbar": {
-    "Teacher Comment Hub": "Centre de commentaires des enseignants"
+    "Teacher Comment Hub": "Centre des commentaires des enseignants"
   },
   "home": {
-    "Student Learning Stages": "Étapes d’apprentissage des étudiants",
-    "Explore key learning areas, behaviors, and improvements by cycle level": "Explorez les principaux domaines d'apprentissage, les comportements et les améliorations par niveau de cycle",
+    "Student Learning Stages": "Étapes d'apprentissage des élèves",
+    "Explore key learning areas, behaviors, and improvements by cycle level": "Explorez les domaines d'apprentissage clés, les comportements et les améliorations par niveau de cycle",
     "Cycle 1": "Cycle 1",
-    "Cycle 2": "Vélo 2",
-    "Cycle 3": "Vélo 3",
+    "Cycle 2": "Cycle 2",
+    "Cycle 3": "Cycle 3",
     "Select": "Sélectionner"
   },
   "login": {
     "hello": "Bonjour"
   },
   "cycleOne": {
-    "Personalized Student Feedback Generation Process": "Processus personnalisé de génération de commentaires des étudiants",
+    "Personalized Student Feedback Generation Process": "Processus personnalisé de génération des retours d'élèves",
     "PathWay To Growth": "Chemin vers la croissance",
     "Learning Areas": "Domaines d'apprentissage",
-    "Acquire basic mathematical tools": "Acquérir les outils mathématiques de base",
+    "Acquire basic mathematical tools": "Acquérir des outils mathématiques de base",
     "Mobilize language in all its dimensions": "Mobiliser la langue dans toutes ses dimensions",
-    "Act, express, understand through artistic activities": "Agir, s'exprimer, comprendre à travers des activités artistiques",
-
+    "Act, express, understand through artistic activities": "Agir, exprimer, comprendre à travers des activités artistiques",
     "Early Mathematical Concepts": "Concepts mathématiques de base",
-    "Oral LAnguage": "Langage oral",
+   
     "Music Education": "Éducation musicale",
     "Time and Space": "Temps et espace",
     "Written Language": "Langage écrit",
     "Visual Arts": "Arts visuels",
-    "Fine Motor Skills": "Habiletés motrices fines",
+    "Fine Motor Skills": "Compétences motrices fines",
     "Discovry of matter": "Découverte de la matière",
-    "Gross Motor Skills": "Habiletés motrices globales",
+    "Gross Motor Skills": "Compétences motrices globales",
     "Discovry of living things": "Découverte des êtres vivants",
-
     "Comparing Quantities": "Comparer les quantités",
     "Discovery of Numbers": "Découverte des nombres",
     "Recognizing Shapes": "Reconnaissance des formes",
-    "Discovering simple words": "Découvrir des mots simples",
+    "Discovering simple words": "Découverte des mots simples",
     "Expressing oneself clearly": "S'exprimer clairement",
     "Understanding instructions": "Comprendre les instructions",
     "Expressing oneself through rhythm": "S'exprimer à travers le rythme",
@@ -51,8 +49,7 @@
     "Understanding life cycles": "Comprendre les cycles de vie",
     "Coordination of movements": "Coordination des mouvements",
     "Participation in physical activities": "Participation aux activités physiques",
-    "Discovering materials and objects": "Découverte des matériaux et des objets",
-
+    "Discovering materials and objects": "Découverte des matériaux et objets",
     "Autonomous": "Autonome",
     "Disruptive": "Perturbateur",
     "Living together": "Vivre ensemble",
@@ -70,7 +67,6 @@
     "Emotion management": "Gestion des émotions",
     "Oral language": "Langage oral",
     "Listening": "Écoute",
-
     "Grammar": "Grammaire",
     "Oral expression": "Expression orale",
     "Reading": "Lecture",
@@ -78,31 +74,22 @@
     "Text Comprenension": "Compréhension de texte",
     "Writting": "Écriture",
     "Writing production": "Production écrite",
-
     "Attentive": "Attentif",
     "Class Driver": "Meneur de classe",
-
     "Motivate": "Motiver",
-
     "Distracted": "Distrait",
-
     "RespectFull of the rules": "Respectueux des règles",
-
     "Dynamism": "Dynamisme",
     "Invested": "Investi",
     "serious": "Sérieux",
-
     "Concentration": "Concentration",
     "Learning": "Apprentissage",
     "Quality of work": "Qualité du travail",
     "UnderStanding instructions": "Comprendre les instructions",
-
     "Mathmatics": "Mathématiques",
     "AttenTion": "Attention",
-
     "Problem-solving": "Résolution de problèmes",
     "Understanding reading text": "Comprendre le texte de lecture",
-
     "Calculations": "Calculs",
     "Geometry": "Géométrie",
     "Measures": "Mesures",
@@ -126,69 +113,51 @@
     "Questioning the world": "Interroger le monde",
     "Behaviors": "Comportements",
     "Improvements": "Améliorations",
-
     "Conjugation": "Conjugaison",
     "Dictation": "Dictée",
-
     "Data analysis": "Analyse des données",
     "Measurement and units": "Mesure et unités",
-
     "Numbers and calculation": "Nombres et calculs",
-
     "Geography": "Géographie",
     "Respect for others": "Respect des autres",
     "Sense of responsibility": "Sens des responsabilités",
-
     "Respect for rule": "Respect des règles",
     "Team spirit": "Esprit d'équipe",
-
     "Computer Science": "Informatique",
     "Life And Earth Science": "Sciences de la vie et de la Terre",
-
     "Exemplary": "Exemplaire",
     "Oral Language": "Langue orale",
     "Responsible": "Responsable",
-
-    "Class motivator": "Motivateur de la classe",
-
+    "Class motivator": "Motivateur de classe",
     "Organized": "Organisé",
     "Respectful": "Respectueux",
-
     "Geographic knowledge": "Connaissances géographiques",
     "Mathematics": "Mathématiques",
     "Respect for rules": "Respect des règles",
-
     "French": "Français",
     "Group activities": "Activités de groupe",
-
     "Physical education": "Éducation physique",
-
     "Time management": "Gestion du temps",
-
     "Foreign language": "Langue étrangère",
-
     "Historical knowledge": "Connaissances historiques",
     "Motivated": "Motivé",
     "Passive": "Passif",
-
-    "Student Name": "Nom de l'étudiant",
+    "Student Name": "Nom de l'élève",
     "Name": "Nom",
     "Select Tone Of Voice": "Sélectionner le ton de la voix",
     "Select Gender": "Sélectionner le genre",
-
     "Generate Comment": "Générer un commentaire",
     "Other": "Autre",
     "Female": "Femme",
     "Male": "Homme",
-    "": "",
     "Science and Technology": "Sciences et Technologie",
     "Sports Activitise": "Activités Sportives",
     "Citizenship": "Citoyenneté",
     "History and Geography": "Histoire et Géographie",
     "Artistic Education": "Éducation Artistique",
-
     "Name is required": "Le nom est requis",
-  "Tone of Voice is required": "Le ton de la voix est requis",
-  "Gender is required": "Le genre est requis"
+    "Tone of Voice is required": "Le ton de la voix est requis",
+    "Gender is required": "Le genre est requis",
+    "" :""
   }
 }

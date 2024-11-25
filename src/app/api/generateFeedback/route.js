@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey:"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"
+  apiKey:"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",
 });
 
 export async function POST(req) {

@@ -28,7 +28,7 @@ const LearningAreasSection = ({ register, setValue }) => {
 
           <CheckboxGroup
             title="Mobilize language in all its dimensions"
-            subtitle="Oral LAnguage"
+            subtitle="Oral Language"
             headbgcolor="#33B1FC"
             options={[
               "Discovering simple words",

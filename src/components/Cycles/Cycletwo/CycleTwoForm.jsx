@@ -112,9 +112,10 @@ const CycleForm = () => {
               })}
             >
               <option value=""></option>
-              <option value="A">Grade A</option>
-              <option value="B">Grade B</option>
-              <option value="C">Grade C</option>
+              <option value="A">Caring</option>
+              <option value="B">Encouraging</option>
+              <option value="c">Enthusiastic</option>
+              <option value="D">Rigorous</option>
             </select>
           </div>
           {errors.toneOfVoice && (
