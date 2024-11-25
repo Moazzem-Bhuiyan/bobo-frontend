@@ -3,11 +3,15 @@ import LearningAreasSection from "@/components/Form/LearningAreaSection/Learning
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
 import { Dialog, Popover } from "@headlessui/react";
 import axios from "axios";
+import { Copy } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+
 const CycleForm = () => {
   const t = useTranslations("cycleOne");
 
@@ -15,13 +19,16 @@ const CycleForm = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm();
   const [result, setResult] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
     console.log("Submitted data:", data);
+    setIsLoading(true);
 
     try {
       const response = await axios.post("/api/generateFeedback", {
@@ -30,7 +37,6 @@ const CycleForm = () => {
 
       const { comment } = response.data;
       setResult(JSON.parse(comment));
-      setIsModalOpen(true);
     } catch (error) {
       console.log("Error generating feedback:", error);
       setResult({
@@ -38,6 +44,9 @@ const CycleForm = () => {
           error.response?.data?.error ||
           "Error generating feedback. Please try again.",
       });
+    } finally {
+      reset();
+      setIsLoading(false);
       setIsModalOpen(true);
     }
   };
@@ -95,6 +104,7 @@ const CycleForm = () => {
           <div className="relative">
             <select
               id="toneOfVoice"
+              placeholder="Tone of voice "
               className="w-full border rounded-md border-black bg-transparent px-4 py-3"
               {...register("toneOfVoice", {
                 required: t("Tone of Voice is required"),
@@ -129,10 +139,11 @@ const CycleForm = () => {
           <div className="relative">
             <select
               id="gender"
+              placeholder="Gender"
               className="w-full border rounded-md border-black bg-transparent px-4 py-3"
               {...register("gender", { required: t("Gender is required") })}
             >
-              <option value=""></option>
+              <option value="Gender"></option>
               <option value="Male">{t("Male")}</option>
               <option value="Female">{t("Female")}</option>
               <option value="Other">{t("Other")}</option>
@@ -156,8 +167,16 @@ const CycleForm = () => {
 
       {/* Submit Button */}
       <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
-        <Button type="submit" className="w-full mb-20 bg-purple-950">
-          {t("Generate Comment")}
+        <Button
+          type="submit"
+          className="w-full mb-20 bg-purple-950"
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <div className="spinner-border animate-spin w-6 h-6 border-4 border-t-transparent border-blue-500 rounded-full"></div>
+          ) : (
+            t("Generate Comment")
+          )}
         </Button>
       </div>
 
@@ -177,13 +196,36 @@ const CycleForm = () => {
               Generated Comment
             </Dialog.Title>
             <div className="mt-4">
-              <pre className="bg-gray-100 p-3 rounded">
-                {JSON.stringify(result, null, 2)}
-              </pre>
+              <div className="bg-gray-100 p-3 rounded flex justify-between items-center">
+                {result?.feedback ? (
+                  <p className="break-words">{result.feedback}</p>
+                ) : (
+                  <p>No feedback available. Please try again.</p>
+                )}
+                {/* Copy Button */}
+                {result?.feedback && (
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(result.feedback);
+
+                      Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your comment has been copied.",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
+                    }}
+                    className="ml-3 px-3 py-1 rounded"
+                  >
+                    <Copy />
+                  </button>
+                )}
+              </div>
             </div>
             <Button
               onClick={() => setIsModalOpen(false)}
-              className="mt-4 w-full bg-purple-950 "
+              className="mt-4 w-full bg-purple-950"
             >
               Close
             </Button>

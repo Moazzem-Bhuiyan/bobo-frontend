@@ -1,38 +1,65 @@
 "use client";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
+import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
 import LearningAreaSectionThree from "@/components/Form/LearningAreaSection/LearningAreaSectionThree";
-import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import { Dialog, Popover } from "@headlessui/react";
+import axios from "axios";
+import { Copy } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
-const CyclethreeForm = () => {
+const CycleForm = () => {
   const t = useTranslations("cycleOne");
+  const { toast } = useToast();
+
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
   } = useForm();
-
   const [result, setResult] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    setResult(data);
-    setIsModalOpen(true);
-  };
-  return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="text-center text-3xl font-bold mt-10">
-          {t("Personalized Student Feedback Generation Process")}
-        </h1>
+    console.log("Submitted data:", data);
+    setIsLoading(true);
 
-        <div className="text-primary-black lg:mx-auto lg:w-[45%] bg-white bg-opacity-70 p-5 rounded-lg">
+    try {
+      const response = await axios.post("/api/generateFeedback", {
+        feedbackData: data,
+      });
+
+      const { comment } = response.data;
+      setResult(JSON.parse(comment));
+    } catch (error) {
+      console.log("Error generating feedback:", error);
+      setResult({
+        feedback:
+          error.response?.data?.error ||
+          "Error generating feedback. Please try again.",
+      });
+    } finally {
+      reset();
+      setIsLoading(false); // Set loading to false once the request is done
+      setIsModalOpen(true); // Open the modal after loading is finished
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <h1 className="text-center text-3xl font-bold mt-8">
+        {t("Personalized Student Feedback Generation Process")}
+      </h1>
+
+      <div className="text-primary-black lg:mx-auto lg:w-[45%] bg-white bg-opacity-70 p-5 rounded-lg">
         {/* Student Name Input Field */}
         <div className="mt-8 grid w-full items-center gap-1.5">
           <div className="flex items-center justify-between">
@@ -128,25 +155,32 @@ const CyclethreeForm = () => {
         </div>
       </div>
 
+      <h1 className="text-center text-3xl font-bold my-4">
+        {t("PathWay To Growth")}
+      </h1>
+      <hr />
+      <LearningAreaSectionThree
+        register={register}
+        setValue={setValue}
+      ></LearningAreaSectionThree>
 
-        <h1 className=" text-center text-3xl font-bold my-4 ">
-          {t("PathWay To Growth")}
-        </h1>
-        <hr />
+      {/* Submit Button */}
+      <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
+        <Button
+          type="submit"
+          className="w-full mb-20 bg-purple-950"
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <div className="spinner-border animate-spin w-6 h-6 border-4 border-t-transparent border-blue-500 rounded-full"></div>
+          ) : (
+            t("Generate Comment")
+          )}
+        </Button>
+      </div>
 
-        <LearningAreaSectionThree register={register} setValue={setValue} />
-
-        {/* Submit Button */}
-
-        <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
-          <Button type="submit" className="w-full mb-20 bg-purple-950">
-            {t("Generate Comment")}
-          </Button>
-        </div>
-      </form>
-
-      {/* showComment */}
-
+      {/* Modal */}
+      {/* Modal */}
       <Dialog
         open={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -162,9 +196,32 @@ const CyclethreeForm = () => {
               Generated Comment
             </Dialog.Title>
             <div className="mt-4">
-              <pre className="bg-gray-100 p-3 rounded">
-                {JSON.stringify(result, null, 2)}
-              </pre>
+              <div className="bg-gray-100 p-3 rounded flex justify-between items-center">
+                {result?.feedback ? (
+                  <p className="break-words">{result.feedback}</p>
+                ) : (
+                  <p>No feedback available. Please try again.</p>
+                )}
+                {/* Copy Button */}
+                {result?.feedback && (
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(result.feedback);
+
+                      Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your comment has been copied.",
+                        showConfirmButton: false,
+                        timer: 1500,
+                      });
+                    }}
+                    className="ml-3 px-3 py-1 rounded"
+                  >
+                    <Copy />
+                  </button>
+                )}
+              </div>
             </div>
             <Button
               onClick={() => setIsModalOpen(false)}
@@ -175,154 +232,8 @@ const CyclethreeForm = () => {
           </Dialog.Panel>
         </div>
       </Dialog>
-    </>
+    </form>
   );
 };
 
-export default CyclethreeForm;
-
-
-// ------------------------------------------
-
-// "use client";
-// import { Label } from "@/components/ui/label";
-// import { Input } from "@/components/ui/input";
-// import { useForm } from "react-hook-form";
-// import { Button } from "@/components/ui/button";
-// import LearningAreaSectionThree from "@/components/Form/LearningAreaSection/LearningAreaSectionThree";
-// import { useState } from "react";
-// import { useTranslations } from "next-intl";
-// import { Dialog } from "@headlessui/react";
-// import axios from "axios"; // axios import
-
-// const CyclethreeForm = () => {
-//   const t = useTranslations("cycleOne");
-//   const {
-//     register,
-//     handleSubmit,
-//     setValue,
-//     formState: { errors },
-//   } = useForm();
-
-//   const [result, setResult] = useState(null);
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-//   // OpenAI API call function
-
-//   const fetchOpenAIResponse = async (data) => {
-//     try {
-//       const response = await fetch("/api/openai", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(data),
-//       });
-
-//       if (response.ok) {
-//         const result = await response.json();
-
-//         return result.comment; /*****genareted comment here***
-
-//       } else {
-//         console.error("Error fetching OpenAI data:", response.statusText);
-//         return null;
-//       }
-//     } catch (error) {
-//       console.error("Error fetching OpenAI data:", error);
-//       return null;
-//     }
-//   };
-
-//   const onSubmit = async (data) => {
-//     console.log(data);
-
-//     // Get the response from OpenAI API
-//     const generatedData = await fetchOpenAIResponse(data);
-
-//     if (generatedData) {
-//       setResult(generatedData);
-//       setIsModalOpen(true);
-//     }
-//   };
-
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit(onSubmit)}>
-//         <h1 className="text-center text-3xl font-bold mt-10">
-//           {t("Personalized Student Feedback Generation Process")}
-//         </h1>
-
-//         <div className="text-primary-black lg:mx-auto lg:w-[45%] bg-white bg-opacity-70 p-5 rounded-lg">
-//           {/* Input Fields */}
-//           <div className="mt-8 grid w-full items-center gap-1.5">
-//             <div className="flex items-center justify-between">
-//               <Label htmlFor="name" className="font-semibold">
-//                 {t("Student Name")}
-//               </Label>
-//             </div>
-//             <div className="relative">
-//               <Input
-//                 id="name"
-//                 placeholder={t("Name")}
-//                 className="border-black bg-transparent px-4 py-5"
-//                 {...register("name", { required: t("Name is required") })}
-//               />
-//             </div>
-//             {errors.name && (
-//               <span className="text-red-500">{errors.name.message}</span>
-//             )}
-//           </div>
-
-//           {/* Other form fields here... */}
-//         </div>
-
-//         <h1 className=" text-center text-3xl font-bold my-4 ">
-//           {t("PathWay To Growth")}
-//         </h1>
-//         <hr />
-
-//         <LearningAreaSectionThree register={register} setValue={setValue} />
-
-//         <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
-//           <Button type="submit" className="w-full mb-20 bg-purple-950">
-//             {t("Generate Comment")}
-//           </Button>
-//         </div>
-//       </form>
-
-//       {/* Modal to display generated data */}
-//       <Dialog
-//         open={isModalOpen}
-//         onClose={() => setIsModalOpen(false)}
-//         className="relative z-50"
-//       >
-//         <div
-//           className="fixed inset-0 bg-black bg-opacity-50"
-//           aria-hidden="true"
-//         />
-//         <div className="fixed inset-0 flex items-center justify-center p-4">
-//           <Dialog.Panel className="bg-white rounded-lg p-6 shadow-lg w-full max-w-md">
-//             <Dialog.Title className="text-lg font-bold">
-//               Generated Comment
-//             </Dialog.Title>
-//             <div className="mt-4">
-//               <pre className="bg-gray-100 p-3 rounded">
-//                 {result} {/* Show generated result */}
-//               </pre>
-//             </div>
-//             <Button
-//               onClick={() => setIsModalOpen(false)}
-//               className="mt-4 w-full bg-purple-950"
-//             >
-//               Close
-//             </Button>
-//           </Dialog.Panel>
-//         </div>
-//       </Dialog>
-//     </>
-//   );
-// };
-
-// export default CyclethreeForm;
+export default CycleForm;

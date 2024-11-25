@@ -7,6 +7,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 import { Inter, Roboto_Mono } from "next/font/google";
+import { ToastProvider } from "@/components/ui/toast";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,13 +48,11 @@ export default async function RootLayout({ children, params }) {
               <NavbarWithConditionalRendering></NavbarWithConditionalRendering>
             </div>
 
-            {children}
-            
-            <ScrollToTopButton></ScrollToTopButton>
-            
-          </div>
+            <Toaster></Toaster>
+           {children}
 
-    
+            <ScrollToTopButton></ScrollToTopButton>
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
