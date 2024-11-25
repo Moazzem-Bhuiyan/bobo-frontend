@@ -1,14 +1,13 @@
 "use client";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
 import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Dialog, Popover } from "@headlessui/react";
+import axios from "axios";
 import { useTranslations } from "next-intl";
-import { Popover } from "@headlessui/react";
-import { Dialog } from "@headlessui/react"; // Import Dialog for Modal
-
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 const CycleForm = () => {
   const t = useTranslations("cycleOne");
 
@@ -22,9 +21,25 @@ const CycleForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
 
   const onSubmit = async (data) => {
-    console.log(data);
-    setResult(data);
-    setIsModalOpen(true); // Open the modal when the form is submitted
+    console.log("Submitted data:", data);
+
+    try {
+      const response = await axios.post("/api/generateFeedback", {
+        feedbackData: data,
+      });
+
+      const { comment } = response.data;
+      setResult(JSON.parse(comment));
+      setIsModalOpen(true);
+    } catch (error) {
+      console.log("Error generating feedback:", error);
+      setResult({
+        feedback:
+          error.response?.data?.error ||
+          "Error generating feedback. Please try again.",
+      });
+      setIsModalOpen(true);
+    }
   };
 
   return (
