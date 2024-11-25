@@ -21,7 +21,7 @@
     "Mobilize language in all its dimensions": "Mobiliser la langue dans toutes ses dimensions",
     "Act, express, understand through artistic activities": "Agir, exprimer, comprendre à travers des activités artistiques",
     "Early Mathematical Concepts": "Concepts mathématiques de base",
-   
+
     "Music Education": "Éducation musicale",
     "Time and Space": "Temps et espace",
     "Written Language": "Langage écrit",
@@ -158,6 +158,10 @@
     "Name is required": "Le nom est requis",
     "Tone of Voice is required": "Le ton de la voix est requis",
     "Gender is required": "Le genre est requis",
-    "" :""
+    "": "",
+    "Caring": "Attentionné",
+    "Encouraging": "Encourageant",
+    "Enthusiastic": "Enthousiaste",
+    "Rigorous": "Rigoureux"
   }
 }

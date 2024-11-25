@@ -11,6 +11,8 @@ const Navber = () => {
   const [isLanguageLoading, setIsLanguageLoading] = useState(true);
   const [language, setLanguage] = useState(locale);
   const { localeSwitcher, isPending } = useLocaleSwitcher();
+  
+  console.log("language :",locale)
 
   // Language switcher handler
   const handleChangeLanguage = (lang) => {

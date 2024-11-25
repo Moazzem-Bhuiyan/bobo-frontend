@@ -27,7 +27,6 @@ const CycleForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    console.log("Submitted data:", data);
     setIsLoading(true);
 
     try {
@@ -35,8 +34,9 @@ const CycleForm = () => {
         feedbackData: data,
       });
 
-      const { comment } = response.data;
-      setResult(JSON.parse(comment));
+      const { comment } = response.data; // comment is already a string
+      setResult({ feedback: comment }); // Wrap it in an object with a feedback key
+      console.log("Submitted data:", comment);
     } catch (error) {
       console.log("Error generating feedback:", error);
       setResult({
@@ -110,11 +110,10 @@ const CycleForm = () => {
                 required: t("Tone of Voice is required"),
               })}
             >
-              <option value=""></option>
-              <option value="A">Caring</option>
-              <option value="B">Encouraging</option>
-              <option value="c">Enthusiastic</option>
-              <option value="D">Rigorous</option>
+              <option value="Caring">{t("Caring")}</option>
+              <option value="Encouraging">{t("Encouraging")}</option>
+              <option value="Enthusiastic">{t("Enthusiastic")}</option>
+              <option value="Rigorous">{t("Rigorous")}</option>
             </select>
           </div>
           {errors.toneOfVoice && (
@@ -144,7 +143,6 @@ const CycleForm = () => {
               className="w-full border rounded-md border-black bg-transparent px-4 py-3"
               {...register("gender", { required: t("Gender is required") })}
             >
-              <option value="Gender"></option>
               <option value="Male">{t("Male")}</option>
               <option value="Female">{t("Female")}</option>
               <option value="Other">{t("Other")}</option>

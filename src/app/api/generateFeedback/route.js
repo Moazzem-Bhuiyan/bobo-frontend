@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const client = new OpenAI({
-  apiKey:"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",
+  apiKey:"",
 });
 
 export async function POST(req) {
@@ -17,7 +17,7 @@ export async function POST(req) {
     }
 
     const prompt = `
-    Based on the following feedback, generate a concise comment (max 150 characters) for the student's performance. Highlight strengths and areas for improvement:
+    Based on the following feedback, generate a concise comment (max 300 characters) for the student's performance. Highlight strengths and areas for improvement:
     Feedback: ${JSON.stringify(feedbackData)}
 
     Example:

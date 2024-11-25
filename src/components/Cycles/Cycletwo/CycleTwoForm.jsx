@@ -1,10 +1,10 @@
 "use client";
-import LearningAreasSection from "@/components/Form/LearningAreaSection/LearningAreaSectionone";
+
 import LearningAreaSectionTwo from "@/components/Form/LearningAreaSection/LearningAreaSectionTwo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
+
 import { Dialog, Popover } from "@headlessui/react";
 import axios from "axios";
 import { Copy } from "lucide-react";
@@ -15,7 +15,6 @@ import Swal from "sweetalert2";
 
 const CycleForm = () => {
   const t = useTranslations("cycleOne");
-  const { toast } = useToast();
 
   const {
     register,
@@ -25,11 +24,10 @@ const CycleForm = () => {
     formState: { errors },
   } = useForm();
   const [result, setResult] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    console.log("Submitted data:", data);
     setIsLoading(true);
 
     try {
@@ -37,8 +35,9 @@ const CycleForm = () => {
         feedbackData: data,
       });
 
-      const { comment } = response.data;
-      setResult(JSON.parse(comment));
+      const { comment } = response.data; // comment is already a string
+      setResult({ feedback: comment }); // Wrap it in an object with a feedback key
+      console.log("Submitted data:", comment);
     } catch (error) {
       console.log("Error generating feedback:", error);
       setResult({
@@ -48,8 +47,8 @@ const CycleForm = () => {
       });
     } finally {
       reset();
-      setIsLoading(false); // Set loading to false once the request is done
-      setIsModalOpen(true); // Open the modal after loading is finished
+      setIsLoading(false);
+      setIsModalOpen(true);
     }
   };
 
@@ -111,11 +110,10 @@ const CycleForm = () => {
                 required: t("Tone of Voice is required"),
               })}
             >
-              <option value=""></option>
-              <option value="A">Caring</option>
-              <option value="B">Encouraging</option>
-              <option value="c">Enthusiastic</option>
-              <option value="D">Rigorous</option>
+            <option value="Caring">{t("Caring")}</option>
+              <option value="Encouraging">{t("Encouraging")}</option>
+              <option value="Enthusiastic">{t("Enthusiastic")}</option>
+              <option value="Rigorous">{t("Rigorous")}</option>
             </select>
           </div>
           {errors.toneOfVoice && (
@@ -144,7 +142,6 @@ const CycleForm = () => {
               className="w-full border rounded-md border-black bg-transparent px-4 py-3"
               {...register("gender", { required: t("Gender is required") })}
             >
-              <option value=""></option>
               <option value="Male">{t("Male")}</option>
               <option value="Female">{t("Female")}</option>
               <option value="Other">{t("Other")}</option>

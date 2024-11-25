@@ -197,6 +197,12 @@
 
     "Name is required": "Name is required",
     "Tone of Voice is required": "Tone of Voice is required",
-    "Gender is required": "Gender is required"
+    "Gender is required": "Gender is required",
+    
+    "Caring":"Caring",
+    "Encouraging":"Encouraging" ,
+    "Enthusiastic": "Enthusiastic",
+    "Rigorous":"Rigorous"
+
   }
 }
