@@ -5,7 +5,7 @@ const LearningAreasSection = ({ register, setValue }) => {
   const t = useTranslations("cycleOne");
   return (
     <div className="text-primary-black lg:mx-auto lg:w-[70%] bg-opacity-70 p-5 rounded-lg">
-      <div className="mt-6 bg-sky-50 rounded-md border-l-2 border-black p-10">
+      <div className="mt-6 bg-sky-50 rounded-md border-l border-black p-10">
         <h2 className="text-3xl mb-3 text-purple-600 font-semibold text-center">
           {t("Learning Areas")}
         </h2>
@@ -135,7 +135,7 @@ const LearningAreasSection = ({ register, setValue }) => {
 
       {/* Behavior Section */}
 
-      <div className="bg-orange-50 mt-20 p-10">
+      <div className="bg-orange-50 mt-20 p-10 border-l border-black rounded-lg">
         <h1 className="text-center text-3xl mb-5 font-bold text-[#D65F00]">
           {t("Behaviors")}
         </h1>
@@ -175,7 +175,7 @@ const LearningAreasSection = ({ register, setValue }) => {
 
       {/* Improvement Section */}
 
-      <div className="  bg-green-50 mt-20 p-10">
+      <div className="  bg-green-50 mt-20 p-10 border-l border-black rounded-lg ">
         <h1 className="text-center text-3xl mb-5 font-bold text-[#3EB489]">
           {t("Improvements")}
         </h1>

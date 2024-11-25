@@ -25,7 +25,7 @@ const CycleForm = () => {
     formState: { errors },
   } = useForm();
   const [result, setResult] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
